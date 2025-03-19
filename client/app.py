@@ -33,7 +33,7 @@ with st.container():
 
     city = st.text_input("Введите город для получения данных о погоде:", "Minsk")
 
-    if st.button("Получить погоду"):
+    if st.button("Получить данные о погоде"):
         with st.spinner(f"Загрузка погоды для {city}..."):
             response = requests.get(API_URL, params={"city": city})
             if response.status_code == 200:
@@ -47,7 +47,7 @@ with st.container():
                 st.error(f"Ошибка при получении данных о погоде для города {city}. Проверьте работу сервера.")
 
 
-    if st.button("Получить курс доллара"):
+    if st.button("Получить ифнормацию о курсе доллара"):
         with st.spinner(f"Загрузка курса доллара..."):
             response = requests.get(API_URL) 
             if response.status_code == 200:
